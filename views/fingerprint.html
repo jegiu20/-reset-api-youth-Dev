@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- #ice{fullWidth} -->
+        <title> AB Pokerstars Game </title>
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=320" charset = "utf-8" />
+        <style>
+            html, body {
+                margin:0px;
+                padding:0px;
+                height: 100%;
+            }
+        </style>
+    <body style="width:320px">
+        <!--<div> text </div>
+        <div> text </div>vvvvvvv
+        <div> text text text text text text text text  text text text text text text text text</div>-->
+        <!--<AdPokerStars>-->
+        <script>
+        
+        /**<AdScript>**/
+
+        /*Track events & external links*/
+        var P_250500_Play = 'http://pliing.se/PliingAd/Event?id=25050000&userAdId=**userAdId&callback=p250500Resp';
+        var P_250500_Win = 'http://pliing.se/PliingAd/Event?id=25050001&userAdId=**userAdId&callback=p250500Resp';
+        var P_250500_Lose = 'http://pliing.se/PliingAd/Event?id=25050002&userAdId=**userAdId&callback=p250500Resp';
+        var P_250500_Replay = 'http://pliing.se/PliingAd/Event?id=25050003&userAdId=**userAdId&callback=p250500Resp';
+        var P_250500_AppAndroid = 'http://pliing.se/PliingAd/ExtLink?id=25050011&userAdId=**userAdId';
+        var P_250500_AppIphone = 'http://pliing.se/PliingAd/ExtLink?id=25050012&userAdId=**userAdId';
+        var p250500Script;
+
+        /*Split up startGame into manageable parts*/
+        var p250500rndm = Math.floor((Math.random()*30));                                /*randomly selects what game to play.*/
+        var p250500gameResultArray = p250500startGame().split("|");                     /*Split up games with pipes - important to remove the very last pipe so that a game isn't just an empty string.*/
+        var p250500gamePartsArray = p250500gameResultArray[p250500rndm].split(",");     /*gameParts consists of 5 parts: 0 = house, 1 = player1, 2=p2, 3=p3. 4 =innehåller de två kort som den vinnande spelaren har på handen*/
+        var p250500hausCardsArray= p250500gamePartsArray[0].split(";");                 /*haus har alltid 5 element, spelarna innehåller två kort som hand sedan kombons värde sedan alla kort i combon*/
+        var p250500player1CardsArray = p250500gamePartsArray[1].split(";");             /*playerXcards[2] innehåller combons värde, som t.ex. HÖGT KORT eller PAR*/
+        var p250500player2CardsArray = p250500gamePartsArray[2].split(";");
+        var p250500player3CardsArray = p250500gamePartsArray[3].split(";");
+        var p250500winnerCardsArray = p250500gamePartsArray[4].split(";");
+
+
+
+        function p250500Resp(xmlData)
+        {
+
+            document.getElementsByTagName('head')[0].removeChild(p250500Script);
+
+        }
+
+        function p250500startGame()
+        {
+            return ("spaderTRE;ruterSEX;ruterESS;kloverTIO;spaderNIO;,hjarterTVA;hjarterFYRA;HÖGT KORT;ruterESS;,spaderESS;hjarterATTA;PAR;ruterESS;spaderESS;,spaderFYRA;hjarterSJU;HÖGT KORT;ruterESS;,spaderESS;hjarterATTA;,|hjarterATTA;hjarterNIO;kloverDROTTNING;kloverFYRA;ruterTVA;,hjarterFEM;spaderKNEKT;HÖGT KORT;kloverDROTTNING;,hjarterTRE;kloverSEX;HÖGT KORT;kloverDROTTNING;,hjarterTVA;ruterDROTTNING;TVÅPAR;kloverDROTTNING;ruterDROTTNING;ruterTVA;hjarterTVA;,hjarterTVA;ruterDROTTNING;,|hjarterTRE;ruterTRE;ruterESS;kloverSJU;ruterTIO;,kloverKNEKT;spaderTIO;TVÅPAR;hjarterTRE;ruterTRE;ruterTIO;spaderTIO;,ruterTVA;spaderDROTTNING;PAR;hjarterTRE;ruterTRE;,ruterFYRA;spaderSEX;PAR;hjarterTRE;ruterTRE;,kloverKNEKT;spaderTIO;,|hjarterTIO;kloverTVA;hjarterDROTTNING;spaderNIO;spaderSJU;,ruterTIO;spaderKUNG;PAR;hjarterTIO;ruterTIO;,kloverATTA;kloverNIO;PAR;spaderNIO;kloverNIO;,ruterSEX;ruterNIO;PAR;spaderNIO;ruterNIO;,ruterTIO;spaderKUNG;,|hjarterDROTTNING;ruterDROTTNING;ruterTIO;spaderKNEKT;kloverKUNG;,kloverTRE;ruterSJU;PAR;hjarterDROTTNING;ruterDROTTNING;,kloverFEM;kloverSJU;PAR;hjarterDROTTNING;ruterDROTTNING;,ruterSEX;ruterKUNG;TVÅPAR;hjarterDROTTNING;ruterDROTTNING;kloverKUNG;ruterKUNG;,ruterSEX;ruterKUNG;,|kloverATTA;spaderFYRA;ruterATTA;kloverSJU;hjarterDROTTNING;,hjarterESS;ruterDROTTNING;TVÅPAR;kloverATTA;ruterATTA;hjarterDROTTNING;ruterDROTTNING;,kloverTVA;hjarterFYRA;TVÅPAR;kloverATTA;ruterATTA;spaderFYRA;hjarterFYRA;,spaderTVA;spaderKNEKT;PAR;kloverATTA;ruterATTA;,hjarterESS;ruterDROTTNING;,|spaderESS;hjarterFYRA;ruterFYRA;kloverFYRA;ruterSJU;,ruterNIO;ruterTVA;TRISS;hjarterFYRA;ruterFYRA;kloverFYRA;,hjarterTVA;hjarterESS;KÅK;hjarterFYRA;ruterFYRA;kloverFYRA;spaderESS;hjarterESS;,spaderNIO;hjarterATTA;TRISS;hjarterFYRA;ruterFYRA;kloverFYRA;,hjarterTVA;hjarterESS;,|spaderTVA;hjarterESS;kloverFYRA;ruterKNEKT;ruterSJU;,kloverTVA;ruterSEX;PAR;spaderTVA;kloverTVA;,ruterFEM;ruterFYRA;PAR;kloverFYRA;ruterFYRA;,hjarterTVA;kloverNIO;PAR;spaderTVA;hjarterTVA;,ruterFEM;ruterFYRA;,|ruterESS;ruterNIO;kloverFYRA;kloverTIO;kloverKNEKT;,kloverDROTTNING;hjarterESS;PAR;ruterESS;hjarterESS;,kloverSJU;hjarterNIO;PAR;ruterNIO;hjarterNIO;,hjarterKNEKT;hjarterKUNG;PAR;kloverKNEKT;hjarterKNEKT;,kloverDROTTNING;hjarterESS;,|ruterESS;ruterKUNG;spaderSJU;spaderNIO;spaderATTA;,hjarterESS;ruterSJU;TVÅPAR;ruterESS;hjarterESS;spaderSJU;ruterSJU;,hjarterTIO;spaderTRE;HÖGT KORT;ruterESS;,ruterFYRA;hjarterKUNG;PAR;ruterKUNG;hjarterKUNG;,hjarterESS;ruterSJU;,|ruterATTA;kloverKUNG;hjarterTIO;spaderFYRA;spaderDROTTNING;,kloverDROTTNING;kloverTRE;PAR;spaderDROTTNING;kloverDROTTNING;,hjarterNIO;ruterDROTTNING;PAR;spaderDROTTNING;ruterDROTTNING;,ruterTRE;ruterESS;HÖGT KORT;ruterESS;,hjarterNIO;ruterDROTTNING;,|kloverTIO;hjarterNIO;spaderKNEKT;hjarterTIO;ruterKUNG;,spaderTRE;ruterTVA;PAR;kloverTIO;hjarterTIO;,hjarterTRE;ruterTIO;TRISS;kloverTIO;hjarterTIO;ruterTIO;,spaderKUNG;kloverTVA;TVÅPAR;kloverTIO;hjarterTIO;ruterKUNG;spaderKUNG;,hjarterTRE;ruterTIO;,|spaderKNEKT;kloverSEX;kloverFEM;spaderSEX;ruterTRE;,ruterNIO;kloverFYRA;PAR;kloverSEX;spaderSEX;,spaderKUNG;ruterATTA;PAR;kloverSEX;spaderSEX;,spaderNIO;ruterSEX;TRISS;kloverSEX;spaderSEX;ruterSEX;,spaderNIO;ruterSEX;,|ruterTIO;kloverFYRA;spaderNIO;hjarterFYRA;ruterKUNG;,hjarterSJU;hjarterKNEKT;PAR;kloverFYRA;hjarterFYRA;,spaderDROTTNING;kloverFEM;PAR;kloverFYRA;hjarterFYRA;,hjarterATTA;ruterTRE;PAR;kloverFYRA;hjarterFYRA;,hjarterATTA;ruterTRE;,|hjarterFEM;hjarterSEX;kloverSJU;ruterATTA;hjarterDROTTNING;,kloverFYRA;ruterTIO;STEGE;kloverFYRA;hjarterFEM;hjarterSEX;kloverSJU;ruterATTA;,hjarterFYRA;kloverTRE;HÖGT KORT;hjarterDROTTNING;,hjarterKNEKT;ruterDROTTNING;PAR;hjarterDROTTNING;ruterDROTTNING;,kloverFYRA;ruterTIO;,|spaderKUNG;kloverESS;spaderFYRA;hjarterATTA;kloverDROTTNING;,spaderTIO;kloverTVA;HÖGT KORT;kloverESS;,hjarterESS;hjarterKUNG;TVÅPAR;spaderKUNG;hjarterKUNG;kloverESS;hjarterESS;,ruterTIO;spaderTRE;HÖGT KORT;kloverESS;,hjarterESS;hjarterKUNG;,|kloverTVA;ruterSJU;spaderKNEKT;hjarterTIO;ruterESS;,spaderESS;ruterFEM;PAR;ruterESS;spaderESS;,kloverDROTTNING;hjarterATTA;HÖGT KORT;ruterESS;,hjarterKNEKT;spaderFYRA;PAR;spaderKNEKT;hjarterKNEKT;,spaderESS;ruterFEM;,|hjarterSJU;kloverSEX;spaderDROTTNING;ruterNIO;kloverSJU;,spaderFEM;ruterESS;PAR;hjarterSJU;kloverSJU;,spaderSEX;ruterFEM;TVÅPAR;hjarterSJU;kloverSJU;kloverSEX;spaderSEX;,hjarterKNEKT;kloverNIO;TVÅPAR;hjarterSJU;kloverSJU;ruterNIO;kloverNIO;,hjarterKNEKT;kloverNIO;,|spaderKNEKT;kloverNIO;kloverSEX;spaderSEX;ruterTIO;,ruterKUNG;spaderFYRA;PAR;kloverSEX;spaderSEX;,hjarterKUNG;ruterSJU;PAR;kloverSEX;spaderSEX;,kloverTIO;spaderATTA;TVÅPAR;kloverSEX;spaderSEX;ruterTIO;kloverTIO;,kloverTIO;spaderATTA;,|spaderATTA;spaderKNEKT;spaderNIO;kloverTRE;spaderDROTTNING;,hjarterNIO;ruterTVA;PAR;spaderNIO;hjarterNIO;,spaderKUNG;ruterESS;FÄRG;spaderATTA;spaderKNEKT;spaderNIO;spaderDROTTNING;spaderKUNG;,ruterKUNG;kloverSJU;HÖGT KORT;ruterKUNG;,spaderKUNG;ruterESS;,|ruterTIO;ruterSEX;spaderTIO;kloverTVA;spaderTRE;,hjarterFYRA;kloverNIO;PAR;ruterTIO;spaderTIO;,ruterESS;hjarterKNEKT;PAR;ruterTIO;spaderTIO;,hjarterDROTTNING;hjarterSEX;TVÅPAR;ruterTIO;spaderTIO;ruterSEX;hjarterSEX;,hjarterDROTTNING;hjarterSEX;,|ruterKNEKT;hjarterTIO;ruterFYRA;hjarterKNEKT;ruterTIO;,spaderTVA;hjarterDROTTNING;TVÅPAR;ruterKNEKT;hjarterKNEKT;hjarterTIO;ruterTIO;,kloverTIO;spaderSJU;KÅK;hjarterTIO;ruterTIO;kloverTIO;ruterKNEKT;hjarterKNEKT;,spaderTIO;hjarterFEM;KÅK;hjarterTIO;ruterTIO;spaderTIO;ruterKNEKT;hjarterKNEKT;,kloverTIO;spaderSJU;,|spaderNIO;spaderKUNG;kloverFYRA;ruterATTA;ruterFEM;,kloverATTA;hjarterTRE;PAR;ruterATTA;kloverATTA;,ruterTVA;kloverFEM;PAR;ruterFEM;kloverFEM;,kloverTRE;kloverKNEKT;HÖGT KORT;spaderKUNG;,kloverATTA;hjarterTRE;,|spaderTRE;spaderNIO;spaderTVA;kloverFEM;hjarterSJU;,hjarterDROTTNING;hjarterTVA;PAR;spaderTVA;hjarterTVA;,hjarterKUNG;spaderDROTTNING;HÖGT KORT;hjarterKUNG;,hjarterTIO;kloverSEX;HÖGT KORT;hjarterTIO;,hjarterDROTTNING;hjarterTVA;,|hjarterSJU;ruterATTA;hjarterTIO;hjarterFEM;hjarterATTA;,ruterESS;kloverSJU;TVÅPAR;hjarterSJU;kloverSJU;ruterATTA;hjarterATTA;,spaderTVA;kloverATTA;TRISS;ruterATTA;hjarterATTA;kloverATTA;,hjarterESS;ruterFEM;FÄRG;hjarterSJU;hjarterTIO;hjarterFEM;hjarterATTA;hjarterESS;,hjarterESS;ruterFEM;,|kloverESS;spaderKUNG;hjarterESS;spaderSEX;hjarterSJU;,kloverDROTTNING;hjarterTIO;PAR;kloverESS;hjarterESS;,spaderTRE;spaderFEM;PAR;kloverESS;hjarterESS;,kloverNIO;hjarterFYRA;PAR;kloverESS;hjarterESS;,kloverNIO;hjarterFYRA;,|ruterTVA;kloverFYRA;hjarterKUNG;ruterSJU;spaderNIO;,ruterESS;ruterATTA;HÖGT KORT;ruterESS;,kloverKNEKT;ruterSEX;HÖGT KORT;hjarterKUNG;,ruterKUNG;hjarterSJU;TVÅPAR;hjarterKUNG;ruterKUNG;ruterSJU;hjarterSJU;,ruterKUNG;hjarterSJU;,|spaderKNEKT;spaderFYRA;spaderDROTTNING;kloverTRE;ruterTVA;,spaderTRE;spaderSEX;FÄRG;spaderKNEKT;spaderFYRA;spaderDROTTNING;spaderTRE;spaderSEX;,hjarterKNEKT;ruterESS;PAR;spaderKNEKT;hjarterKNEKT;,hjarterKUNG;kloverFEM;HÖGT KORT;hjarterKUNG;,spaderTRE;spaderSEX;,|spaderKNEKT;hjarterSJU;hjarterSEX;kloverESS;ruterKUNG;,ruterSJU;ruterNIO;PAR;hjarterSJU;ruterSJU;,spaderDROTTNING;spaderKUNG;PAR;ruterKUNG;spaderKUNG;,kloverATTA;spaderTIO;HÖGT KORT;kloverESS;,spaderDROTTNING;spaderKUNG;,|ruterKNEKT;spaderFEM;spaderKNEKT;kloverDROTTNING;spaderESS;,hjarterKUNG;kloverSJU;PAR;ruterKNEKT;spaderKNEKT;,kloverFEM;ruterNIO;TVÅPAR;ruterKNEKT;spaderKNEKT;spaderFEM;kloverFEM;,kloverNIO;kloverATTA;PAR;ruterKNEKT;spaderKNEKT;,kloverFEM;ruterNIO;,");
+        }
+      
+        function p250500checkWinner(kort1)
+        {
+            if(kort1 === p250500winnerCardsArray[0] || kort1 === p250500winnerCardsArray[1]) 
+            {
+                return true;
+            }
+            else
+            {
+                console.log(kort1);
+                return false;
+            }
+        }
+
+        function p250500reloadPage()
+        {
+
+
+                location.reload();
+        }
+
+
+        function p250500showWinner(isWinner, player, playerCombo)
+        {
+
+            if(isWinner !== true)
+                {
+
+                    p250500wolt.innerHTML = "Fel! Du kanske behöver lite mer träning?";
+                    p250500woltc.innerHTML = playerCombo;
+                }
+                else
+                {
+                    
+
+                    p250500wolt.innerHTML = "Rätt! Spela i mobilen nu!";
+                    p250500woltc.innerHTML = playerCombo;
+
+                
+                }
+
+           if(player === "p1")
+           {
+
+                p250500p1container.style.webkitTransform="translate(90px, 35px)";
+                for (var yi = 3; yi < p250500player1CardsArray.length;yi++){
+                    p250500showCombo(p250500player1CardsArray[yi]); 
+                    console.log("playerone showing combo " + p250500player1CardsArray[yi]);
+                }
+                window.setTimeout(function()
+                {
+                    p250500winorlose.style.webkitTransform = "scale(1.0, 1.0)";
+                    p250500replayGame.style.webkitTransform = "scale(1.0, 1.0)";
+                }, 500);
+           }
+           else if(player === "p2")
+           {
+
+                p250500p2container.style.webkitTransform="translate(-100px, 35px)";
+                for (var yi = 3; yi < p250500player3CardsArray.length;yi++){
+                    p250500showCombo(p250500player3CardsArray[yi]); 
+                    console.log("playertwo showing combo " + p250500player1CardsArray[yi]);
+                }
+                window.setTimeout(function()
+                {
+
+                    p250500winorlose.style.webkitTransform = "scale(1.0, 1.0)";
+                    p250500replayGame.style.webkitTransform = "scale(1.0, 1.0)";
+
+                }, 500);
+           }
+           else
+           {
+
+                p250500p3container.style.webkitTransform="translate(0px, 100px)";
+                for (var yi = 3; yi < p250500player2CardsArray.length;yi++){
+                    p250500showCombo(p250500player2CardsArray[yi]); 
+                    console.log("playerthree showing combo " + p250500player1CardsArray[yi]);
+                }
+                window.setTimeout(function()
+                {
+
+                p250500winorlose.style.webkitTransform = "scale(1.0, 1.0)";
+                p250500replayGame.style.webkitTransform = "scale(1.0, 1.0)";
+
+                }, 500);
+           }
+
+        }
+
+        function p250500showCombo(card) 
+           {
+            if(card === p250500hausCardsArray[0])
+            {
+                p250500hcard1.style.webkitTransform="translate(0px, -20px)";
+            }
+            if(card === p250500hausCardsArray[1])
+            {
+                p250500hcard2.style.webkitTransform="translate(0px, -20px)";
+            }
+             if(card === p250500hausCardsArray[2])
+            {
+                p250500hcard3.style.webkitTransform="translate(0px, -20px)";
+            }
+             if(card === p250500hausCardsArray[3])
+            {
+                p250500hcard4.style.webkitTransform="translate(0px, -20px)";
+            }
+             if(card === p250500hausCardsArray[4])
+            {
+                p250500hcard5.style.webkitTransform="translate(0px, -20px)";
+            }
+           }
+
+        function p250500appDownload()
+        {
+            p250500ua=navigator.userAgent.toString().toLowerCase();
+            if(p250500ua.indexOf("android")!==-1)
+            {
+                window.open('https://www.pokerstars.com/poker/download/android/', '_blank');
+                /*window.location.href='https://play.google.com/store/apps/details?id=com.pyrsoftware.pokerstars.net&hl=sv'; ta bort sen, ersätts med db*/
+                console.log("android");
+            }
+            else if(p250500ua.indexOf("iphone")!==-1)
+            {
+                window.location.href='https://www.pokerstars.eu/se/poker/download/ios/';
+                console.log("iphone");
+            }
+            else
+            {
+                window.location.href='https://itunes.apple.com/gb/app/pokerstars-poker/id497361777'; /*ta bort sen, ersätt med valfri db typ iTunes*/
+            }
+        }
+
+        function p250500player1click()
+        {
+            var isWinner = p250500checkWinner(p250500player1CardsArray[0]);
+            p250500showWinner(isWinner, "p1", p250500player1CardsArray[2]);
+            console.log("1");
+            p250500p1click.removeAttribute("onclick");
+            p250500p2click.removeAttribute("onclick");
+            p250500p3click.removeAttribute("onclick");
+        }
+
+        function p250500player2click()
+        {
+            var isWinner = p250500checkWinner(p250500player3CardsArray[0]);
+            p250500showWinner(isWinner, "p2", p250500player3CardsArray[2]);;
+            p250500p1click.removeAttribute("onclick");
+            p250500p2click.removeAttribute("onclick");
+            p250500p3click.removeAttribute("onclick");
+        }
+
+        function p250500player3click()
+        {
+            var isWinner = p250500checkWinner(p250500player2CardsArray[0]);
+            p250500showWinner(isWinner, "p3", p250500player2CardsArray[2]);
+            p250500p1click.removeAttribute("onclick");
+            p250500p2click.removeAttribute("onclick");
+            p250500p3click.removeAttribute("onclick");
+        }
+
+        function p250500getYpos(s)
+        {
+            var ypos;
+            if(s.indexOf("klover") !== -1)
+            {
+                ypos = 81;
+            }
+            if(s.indexOf("spader") !== -1)
+            {
+                ypos = 243;
+            }
+            if(s.indexOf("hjarter") !== -1)
+            {
+                ypos = 162;
+            }
+            if(s.indexOf("ruter") !== -1)
+            {
+                ypos = 0;
+            }
+            return ypos;
+        }
+            
+
+        function p250500getXpos(s)
+        {
+            var xpos;
+            if(s.indexOf("TVA") !== -1)
+            {
+                xpos = 0;
+            }
+            if(s.indexOf("TRE") !== -1)
+            {
+                xpos = 58;
+            }
+            if(s.indexOf("FYRA") !== -1)
+            {
+                xpos = 116;
+            }
+            if(s.indexOf("FEM") !== -1)
+            {
+                xpos = 175;
+            }
+            if(s.indexOf("SEX") !== -1)
+            {
+                xpos = 233;
+            }
+            if(s.indexOf("SJU") !== -1)
+            {
+                xpos = 292;
+            }
+            if(s.indexOf("ATTA") !== -1)
+            {
+                xpos = 350;
+            }
+            if(s.indexOf("NIO") !== -1)
+            {
+                xpos = 409;
+            }
+            if(s.indexOf("TIO") !== -1)
+            {
+                xpos = 467;
+            }
+            if(s.indexOf("KNEKT") !== -1)
+            {
+                xpos = 526;
+            }
+            if(s.indexOf("DROTTNING") !== -1)
+            {
+                xpos = 584;
+            }
+            if(s.indexOf("KUNG") !== -1)
+            {
+                xpos = 643;
+            }
+            if(s.indexOf("ESS") !== -1)
+            {
+                xpos = 701;
+            }
+            return xpos;
+        }
+
+        function p250500removeWindow() /*tar bort första fönstret+klickbara ytan. Fulkod, no regrets*/
+        {
+
+            p250500vilkenhand.style.webkitTransform = "scale(0.0, 0.0)";
+            p250500vilkenhandclick.style.webkitTransform = "scale(0.0, 0.0)";
+
+
+        }
+
+        function p250500animateStuff()
+        {
+            p250500p1card1.style.webkitTransform = "translate(0px, 150px)";
+            window.setTimeout(function()
+            {
+
+                p250500p1card2.style.webkitTransform = "translate(0px, 160px)";
+
+            }, 70);
+            window.setTimeout(function()
+            {
+
+                p250500p2card1.style.webkitTransform = "translate(0px, 100px)";
+
+            }, 140);
+                window.setTimeout(function()
+            {
+
+                p250500p2card2.style.webkitTransform = "translate(0px, 110px)";
+
+            }, 210);
+                window.setTimeout(function()
+            {
+
+                p250500p3card1.style.webkitTransform = "translate(0px, 160px)";
+
+            }, 280);
+                window.setTimeout(function()
+            {
+
+                p250500p3card2.style.webkitTransform = "translate(0px, 170px)";
+
+            }, 350);
+                window.setTimeout(function()
+            {
+
+                p250500housecontainer.style.webkitTransform = "translate(0px, -215px)";
+
+            }, 450);
+                window.setTimeout(function()
+            {
+
+                p250500vilkenhand.style.webkitTransform = "scale(1.0, 1.0)";
+                p250500vilkenhandclick.style.webkitTransform = "scale(1.0, 1.0)";
+
+            }, 510);
+
+        }
+
+
+        window.onload = function()
+        {
+
+            p250500p1container = document.getElementById('p250500p1container');
+            p250500p1click = document.getElementById('p250500p1click');
+            p250500p1card1 = document.getElementById('p250500p1card1');
+            p250500p1card2 = document.getElementById('p250500p1card2');
+            p250500p2container = document.getElementById('p250500p2container');
+            p250500p2click = document.getElementById('p250500p2click');
+            p250500p2card1 = document.getElementById('p250500p2card1');
+            p250500p2card2 = document.getElementById('p250500p2card2');
+            p250500p3container = document.getElementById('p250500p3container');
+            p250500p3click = document.getElementById('p250500p3click');
+            p250500p3card1 = document.getElementById('p250500p3card1');
+            p250500p3card2 = document.getElementById('p250500p3card2');
+            p250500housecontainer = document.getElementById('p250500housecontainer');
+            p250500hcard1 = document.getElementById('p250500hcard1');
+            p250500hcard2 = document.getElementById('p250500hcard2');
+            p250500hcard3 = document.getElementById('p250500hcard3');
+            p250500hcard4 = document.getElementById('p250500hcard4');
+            p250500hcard5 = document.getElementById('p250500hcard5');
+            p250500cards = document.getElementById('p250500cards');
+            p250500vilkenhand = document.getElementById('p250500vilkenhand');
+            p250500winorlose = document.getElementById('p250500winorlose');
+            p250500wolt = document.getElementById('p250500wolt');
+            p250500woltc = document.getElementById('p250500woltc');
+            p250500replayGame = document.getElementById('p250500replayGame');
+
+            p250500p1c1 = p250500p1card1.getContext("2d");
+            p250500p1c2 = p250500p1card2.getContext("2d");
+            p250500p2c1 = p250500p2card1.getContext("2d");
+            p250500p2c2 = p250500p2card2.getContext("2d");
+            p250500p3c1 = p250500p3card1.getContext("2d");
+            p250500p3c2 = p250500p3card2.getContext("2d");
+
+            p250500hc1 = p250500hcard1.getContext("2d");
+            p250500hc2 = p250500hcard2.getContext("2d");
+            p250500hc3 = p250500hcard3.getContext("2d");
+            p250500hc4 = p250500hcard4.getContext("2d");
+            p250500hc5 = p250500hcard5.getContext("2d");
+            
+            p250500p1c1.drawImage(cards, p250500getXpos(p250500player1CardsArray[0]), p250500getYpos(p250500player1CardsArray[0]), 56, 78, 0, 0, 220, 110);
+            p250500p1c2.drawImage(cards, p250500getXpos(p250500player1CardsArray[1]), p250500getYpos(p250500player1CardsArray[1]), 56, 78, 0, 0, 220, 110);
+            p250500p2c1.drawImage(cards, p250500getXpos(p250500player2CardsArray[0]), p250500getYpos(p250500player2CardsArray[0]), 56, 78, 0, 0, 220, 110);
+            p250500p2c2.drawImage(cards, p250500getXpos(p250500player2CardsArray[1]), p250500getYpos(p250500player2CardsArray[1]), 56, 78, 0, 0, 220, 110);
+            p250500p3c1.drawImage(cards, p250500getXpos(p250500player3CardsArray[0]), p250500getYpos(p250500player3CardsArray[0]), 56, 78, 0, 0, 220, 110);
+            p250500p3c2.drawImage(cards, p250500getXpos(p250500player3CardsArray[1]), p250500getYpos(p250500player3CardsArray[1]), 56, 78, 0, 0, 220, 110);
+
+            p250500hc1.drawImage(cards, p250500getXpos(p250500hausCardsArray[0]), p250500getYpos(p250500hausCardsArray[0]), 56, 78, 0, 0, 270, 140);
+            p250500hc2.drawImage(cards, p250500getXpos(p250500hausCardsArray[1]), p250500getYpos(p250500hausCardsArray[1]), 56, 78, 0, 0, 270, 140);
+            p250500hc3.drawImage(cards, p250500getXpos(p250500hausCardsArray[2]), p250500getYpos(p250500hausCardsArray[2]), 56, 78, 0, 0, 270, 140);
+            p250500hc4.drawImage(cards, p250500getXpos(p250500hausCardsArray[3]), p250500getYpos(p250500hausCardsArray[3]), 56, 78, 0, 0, 270, 140);
+            p250500hc5.drawImage(cards, p250500getXpos(p250500hausCardsArray[4]), p250500getYpos(p250500hausCardsArray[4]), 56, 78, 0, 0, 270, 140);
+
+            p250500animateStuff();
+
+        };
+
+        /**</AdScript>**/
+        </script>
+        <!--<AdHTML>-->
+        <!-- RichMedia Ads, copyright Adssets AB, 2013 -->
+        <div id="p250500winorlose" onclick="p250500appDownload();" style="display:block;margin:0px;padding:0px;position:absolute;top:100px;left:0px;width:320px;height:148px;z-index:10;-webkit-transition:all 0.1s linear 0ms;-webkit-transform: scale(0.0,0.0)translate3d(0px,0px,0px);background-image:url('http://pliing.se/zImages/pokerstars/provaIGEN.png')">
+            <p id="p250500woltc" style="visibility:visible;color:white;font-family:Arial;position:absolute;text-align:center;font-size:20px;width:320px;top:5%;-webkit-transform:scale(0.9,1);"></p>
+            <p id="p250500wolt" style="visibility:visible;color:white;font-family:Arial;position:absolute;text-align:center;width:320px;top:21%;-webkit-transform:scale(0.9,1);"></p>
+        </div>
+         <div id="p250500vilkenhandclick" onclick="p250500removeWindow();" style="display:block;margin:0px;padding:0px;position:absolute;top:0px;left:0px;width:320px;height:320px;z-index:9;-webkit-transition:all 0.1s linear 0ms;-webkit-transform: scale(0.0,0.0);translate3d(0px,0px,0px);"></div>
+         <div id="p250500vilkenhand" onclick="p250500removeWindow();" style="display:block;margin:0px;padding:0px;position:absolute;top:100px;left:0px;width:320px;height:128px;z-index:8;-webkit-transition:all 0.1s linear 0ms;-webkit-transform: scale(0.0,0.0);translate3d(0px,0px,0px);background-image:url('http://pliing.se/zImages/pokerstars/vilkenHand.png')"></div>
+        <div id="p250500p1click" onclick="p250500player1click();" style="display:block;margin:0px;padding:0px;position:absolute;top:100px;left:7px;z-index:5;width:120px;height:90px;"></div>
+        <div id="p250500p3click" onclick="p250500player2click();" style="display:block;margin:0px;padding:0px;position:absolute;top:100px;left:195px;z-index:5;width:120px;height:90px;"></div>
+        <div id="p250500p2click" onclick="p250500player3click();" style="display:block;margin:0px;padding:0px;position:absolute;top:35px;left:100px;z-index:5;width:120px;height:90px;"></div>
+        <div id="p250500replayGame" onclick="p250500reloadPage();" style="display:block;margin:0px;padding:0px;position:absolute;top:210px;left:10px;width:120px;height:27px;-webkit-transition:all 0.1s linear 0ms;-webkit-transform: scale(0.0,0.0)translate3d(0px,0px,0px);z-index:10;"></div>
+
+        <div id="p250500adArea" style="display:block;margin:0px;padding:0px;position:relative;top:0px;left:0px;width:320px;height:320px;overflow:hidden; z-index: 1; background-image:url('http://pliing.se/zImages/pokerstars/bg.png')">
+            <img id="cards" src="http://pliing.se/zImages/pokerstars/cards.png" alt="some_text" style="width:100px;height:100px;visibility:hidden;">
+
+            <!-- Player 1 -->
+                <div id="p250500p1container" style="display:block;margin:0px;padding:0px;position:absolute;top:90px;left:0px; width:134px; height:90px; z-index:1;-webkit-transition:all 0.1s linear 0ms;-webkit-transform: translate3d(0px,0px,0px);">
+                    <div id="p250500p1portrait" style="display:block;margin:0px;padding:0px;position:absolute;top:40px;left:0px;width:134px;height:52px;z-index:4;background-image:url('http://pliing.se/zImages/pokerstars/player1.png')"></div>
+                    <canvas id="p250500p1card1" style="display:block;margin:0px;padding:0px;position:absolute;top:-150px;left:25px; width:56px; height:78px;z-index:2;-webkit-transition:all 0.1s linear 0ms;-webkit-transform: translate(-10px, -10px, -10px) scale(1.0,1.0) translate3d(0px,0px,0px);"></canvas>
+                    <canvas id="p250500p1card2" style="display:block;margin:0px;padding:0px;position:absolute;top:-150px;left:50px;width:56px;height:78px;z-index:3;-webkit-transition:all 0.1s linear 0ms;-webkit-transform: translate3d(0px,0px,0px);"></canvas>
+                </div>
+                
+                <!-- Player 3 -->
+                 <div id="p250500p2container" style="display:block;margin:0px;padding:0px;position:absolute;top:90px;left:185px; width:134px; height:90px;z-index:1;-webkit-transition:all 0.1s linear 0ms;-webkit-transform: translate3d(0px,0px,0px);">
+                    <div id="p2portrait" style="display:block;margin:0px;padding:0px;position:absolute;top:41px;left:0px;width:134px;height:50px;z-index:4;background-image:url('http://pliing.se/zImages/pokerstars/player2.png')"></div>
+                    <canvas id="p250500p3card1" style="display:block;margin:0px;padding:0px;position:absolute;top:-160px;left:35px; width:56px; height:78px;z-index:2;-webkit-transition:all 0.1s linear 0ms;-webkit-transform: translate3d(0px,0px,0px);"></canvas>
+                    <canvas id="p250500p3card2" style="display:block;margin:0px;padding:0px;position:absolute;top:-160px;left:60px;width:56px;height:78px;z-index:3;-webkit-transition:all 0.1s linear 0ms;-webkit-transform: translate3d(0px,0px,0px);"></canvas>
+                </div>
+                
+                <!-- Player 2 -->
+                <div id="p250500p3container" style="display:block;margin:0px;padding:0px;position:absolute;top:25px;left:87px; width:134px; height:90px;z-index:1;-webkit-transition:all 0.1s linear 0ms;-webkit-transform: translate3d(0px,0px,0px);">
+                    <div id="p3portrait" style="display:block;margin:0px;padding:0px;position:absolute;top:41px;left:0px;width:134px;height:50px;z-index:4;background-image:url('http://pliing.se/zImages/pokerstars/player3.png')"></div>
+                    <canvas id="p250500p2card1" style="display:block;margin:0px;padding:0px;position:absolute;top:-100px;left:30px; width:56px; height:78px;z-index:2;-webkit-transition:all 0.1s linear 0ms;-webkit-transform: translate3d(0px,0px,0px);"></canvas>
+                    <canvas id="p250500p2card2" style="display:block;margin:0px;padding:0px;position:absolute;top:-100px;left:55px;width:56px;height:78px;z-index:3;-webkit-transition:all 0.1s linear 0ms;-webkit-transform: translate3d(0px,0px,0px);"></canvas>
+                </div>
+                
+                <!-- House cards -->
+                <div id="p250500housecontainer" style="display:block;margin:0px;padding:0px;position:absolute;top:430px;left:5px;width:306px;height:100px;z-index:1;-webkit-transition:all 0.1s linear 0ms;-webkit-transform: translate3d(0px,0px,0px);">
+                    <canvas id="p250500hcard1" style="display:block;margin:0px;padding:0px;position:absolute;top:20px;left:8px; width:56px; height:78px;z-index:2;-webkit-transition:all 0.1s linear 0ms;-webkit-transform: translate3d(0px,0px,0px);"></canvas>
+                    <canvas id="p250500hcard2" style="display:block;margin:0px;padding:0px;position:absolute;top:20px;left:68px; width:56px; height:78px;z-index:2;-webkit-transition:all 0.1s linear 0ms;-webkit-transform: translate3d(0px,0px,0px);"></canvas>
+                    <canvas id="p250500hcard3" style="display:block;margin:0px;padding:0px;position:absolute;top:20px;left:128px; width:56px; height:78px;z-index:2;-webkit-transition:all 0.1s linear 0ms;-webkit-transform: translate3d(0px,0px,0px);"></canvas>
+                    <canvas id="p250500hcard4" style="display:block;margin:0px;padding:0px;position:absolute;top:20px;left:188px; width:56px; height:78px;z-index:2;-webkit-transition:all 0.1s linear 0ms;-webkit-transform: translate3d(0px,0px,0px);"></canvas>
+                    <canvas id="p250500hcard5" style="display:block;margin:0px;padding:0px;position:absolute;top:20px;left:248px; width:56px; height:78px;z-index:2;-webkit-transition:all 0.1s linear 0ms;-webkit-transform: translate3d(0px,0px,0px);"></canvas>
+                </div>
+        </div>
+    <!--</AdHTML>-->
+    <!--</AdPokerStars>-->
+    </body>
+</html>

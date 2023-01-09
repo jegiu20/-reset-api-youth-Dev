@@ -1,0 +1,641 @@
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿<!-- Olá?:v -->
+<!-- Roubando meu html né safado -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Rest Api - Akame</title>
+     <meta content='#000000' name='theme-color'/>
+    <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="vendors/owl-carousel-2/owl.carousel.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="vendors/owl-carousel-2/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="https://i.ibb.co/30yMJfC/774e257c2a7f.jpg"><link rel="stylesheet" href="ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css">
+    <link rel="shortcut icon" href="https://i.ibb.co/30yMJfC/774e257c2a7f.jpg"><link rel="stylesheet" href="ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css">
+    <script src="ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
+   <meta name="description" content="AKAME - API">
+   <meta property="og:image" content="https://i.ibb.co/30yMJfC/774e257c2a7f.jpg">
+   <meta property="og:site_name" content="AKAME API">
+   <meta name="keywords" content="REST API">
+   <meta name="author" content="AKAME">
+  </head>
+  <body>
+  <body id="page-top" onload="getvisitor();">
+    <div class="container-scroller">
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+          <a class="sidebar-brand brand-logo rounded-circle" href="#"><img src="images/logo1.png" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo-mini" href="#"><img src="images/logo1.png" class="rounded-circle" alt="logo" /></a>
+        </div>
+       <font face="Original Surfer">
+        <ul class="nav">
+          <li class="nav-item profile">
+            <div class="profile-desc">
+              <div class="profile-pic">
+                <div class="count-indicator">
+                  <img class="img-xs rounded-circle " src="https://i.ibb.co/30yMJfC/774e257c2a7f.jpg" alt="">
+                  <span class="count bg-success"></span>
+                </div>
+                <div class="profile-name">
+                  <h5 class="mb-0 font-weight-normal">Breno Dev</h5>
+                  <span>Bem vindo ao menu das apis</span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item nav-category">
+            <span class="nav-link">Docs</span>
+          </li>
+          <li class="nav-item menu-items">
+          <a class="nav-link" href="#">
+          <span class="menu-icon">
+          <i class="mdi mdi-home"></i>
+          </span>
+          <span class="menu-title">Início</span>
+          </a>
+          </li>
+          <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#ui-downloader" aria-expanded="false" aria-controls="ui-downloader">
+          <span class="menu-icon">
+          <i class="mdi mdi-download"></i>
+          </span>
+          <span class="menu-title">Download API</span>
+          <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-downloader">
+          <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link"href="/api/yt/playmp3?query=Kamaitachi dragão&apikey=SUA_APIKEY" target="_blank">play</a>
+		            <li class="nav-item"> <a class="nav-link"href="/api/yt/playmp4?query=Edit akame funk&apikey=SUA_APIKEY" target="_blank">playmp4</a>		           
+	            <li class="nav-item"> <a class="nav-link"href="/api/download/ytmp3?url=https://youtu.be/KMav3dBOu_c&apikey=SUA_APIKEY">Ytmp3</a>	            
+             <li class="nav-item"> <a class="nav-link"href="/api/download/ytmp4?url=https://youtu.be/2HtijYB3fI0&apikey=SUA_APIKEY"> Ytmp4</a>
+		          <li class="nav-item"> <a class="nav-link"href="/api/yt/search?query=Akame edit anime&apikey=SUA_APIKEY" target="_blank">ytsearch</a>
+	         <li class="nav-item"> <a class="nav-link"href="api/tiktod/?url=https://vm.tiktok.com/ZMRXoPvCv/&apikey=APIKEY">Tiktok Download</a>
+          </div>
+          </li>
+          <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#ui-stalker" aria-expanded="false" aria-controls="ui-stalker">
+          <span class="menu-icon">
+          <i class="mdi mdi-chart-bar"></i>
+          </span>
+          <span class="menu-title">Stalker API</span>
+          <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-stalker">
+          <ul class="nav flex-column sub-menu">
+          
+          <li class="nav-item"> <a class="nav-link"href="api/tiktod/stalk/?username=Deidara&apikey=APIKEY">Tiktok Stalk</a></li>
+          </ul>
+          </div>
+          </li>
+                    <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#ui-img-maker" aria-expanded="false" aria-controls="ui-img-maker">
+          <span class="menu-icon">
+          <i class="mdi mdi-folder-multiple-image"></i>
+          </span>
+          <span class="menu-title">Textpro</span>
+          <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-img-maker">
+          <ul class="nav flex-column sub-menu">
+          
+          <li class="nav-item"> <a class="nav-link" href="/api/textpro/natural-leaves?apikey=SUA_APIKEY&text=sayo" target="_blank">Natural-leaves Text</a>
+                  <li class="nav-item"> <a class="nav-link" href="/api/textpro/metallic?apikey=SUA_APIKEY&text=sayo" target="_blank">metallic</a>                         
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/glossymetalic?apikey=SUA_APIKEY&text=sayo" target="_blank">glossy metalic</a>                        
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/sciencefiction?apikey=SUA_APIKEY&text=sayo" target="_blank">science fiction</a>                       
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/greenhorror?apikey=SUA_APIKEY&text=sayo" target="_blank">green horror</a>                        
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/transformer?apikey=SUA_APIKEY&text=sayo" target="_blank">transformer</a>                         
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/berry?apikey=SUA_APIKEY&text=sayo" target="_blank">berry</a>                        
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/layered?apikey=SUA_APIKEY&text=sayo" target="_blank">layered</a>                         
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/thunder?apikey=SUA_APIKEY&text=sayo" target="_blank">thunder</a>                        
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/magmahot?apikey=SUA_APIKEY&text=sayo" target="_blank">magma hot</a>                         
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/3Dstone?apikey=SUA_APIKEY&text=sayo" target="_blank">3D stone</a>                        
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/3Dneonlight?apikey=SUA_APIKEY&text=sayo" target="_blank">3D neon light</a>                         
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/impressiveglitch?apikey=SUA_APIKEY&text=sayo" target="_blank">impressive glitch</a>                        
+                <li class="nav-item"> <a class="nav-link" href="/api/textpro/HarryPotter?apikey=SUA_APIKEY&text=sayo" target="_blank">Harry Potter</a>                         
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/embossed?apikey=SUA_APIKEY&text=sayo" target="_blank">embossed</a>                        
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/Brokenglass?apikey=SUA_APIKEY&text=sayo" target="_blank">Broken glass</a>
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/artpaper?apikey=SUA_APIKEY&text=sayo" target="_blank">art paper</a>                        
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/3Dglossy?apikey=SUA_APIKEY&text=sayo" target="_blank">3D glossy</a>                         
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/3Drealistic?apikey=SUA_APIKEY&text=sayo" target="_blank">3D realistic</a>                        
+                 <li class="nav-item"> <a class="nav-link" href="/api/textpro/foggy?apikey=SUA_APIKEY&text=sayo" target="_blank">foggy</a>                         
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/neondevilwings?apikey=SUA_APIKEY&text=sayo" target="_blank">neon devil wings</a>                        
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/3Dunderwater?apikey=SUA_APIKEY&text=sayo" target="_blank">3D underwater</a>                         
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/bearmascot?apikey=SUA_APIKEY&text=sayo" target="_blank">bear mascot</a>                        
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/wonderfulgraffiti?apikey=SUA_APIKEY&text=sayo" target="_blank">wonderful graffiti</a>                         
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/futuristicneon?apikey=SUA_APIKEY&text=sayo" target="_blank">futuristic neon</a>                        
+                <li class="nav-item"> <a class="nav-link" href="/api/textpro/snow?apikey=SUA_APIKEY&text=sayo" target="_blank">snow</a>                         
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/cloud?apikey=SUA_APIKEY&text=sayo" target="_blank">cloud</a>                        
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/luxurygold?apikey=SUA_APIKEY&text=sayo" target="_blank">luxury gold</a>                        
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/3Dgradient?apikey=SUA_APIKEY&text=sayo" target="_blank">3D gradient</a>                        
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/realisticcloud?apikey=SUA_APIKEY&text=sayo" target="_blank">realistic cloud</a>                         
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/SandSummer?apikey=SUA_APIKEY&text=sayo" target="_blank">Sand Summer</a>                        
+                 <li class="nav-item"> <a class="nav-link" href="/api/textpro/SandWriting?apikey=SUA_APIKEY&text=sayo" target="_blank">Sand Writing</a>                         
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/Sandengraved?apikey=SUA_APIKEY&text=sayo" target="_blank">Sand engraved</a>                        
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/summerysand?apikey=SUA_APIKEY&text=sayo" target="_blank">summery sand</a>                         
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/3dglue?apikey=SUA_APIKEY&text=sayo" target="_blank">3d glue</a>                        
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/MetalDarkGold?apikey=SUA_APIKEY&text=sayo" target="_blank">Metal Dark Gold</a>                         
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/NeonLight?apikey=SUA_APIKEY&text=sayo" target="_blank">Neon Light</a>                        
+                 <li class="nav-item"> <a class="nav-link" href="/api/textpro/1917Style?apikey=SUA_APIKEY&text=sayo" target="_blank">1917 Style</a>                         
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/XmasCards3D?apikey=SUA_APIKEY&text=sayo" target="_blank">Xmas Cards 3D</a>                        
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/Blood?apikey=SUA_APIKEY&text=sayo" target="_blank">Blood</a>                         
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/HalloweenFire?apikey=SUA_APIKEY&text=sayo" target="_blank">Halloween Fire</a>                        
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/Lava?apikey=SUA_APIKEY&text=sayo" target="_blank">Lava</a>                         
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/SteelText?apikey=SUA_APIKEY&text=sayo" target="_blank">Steel Text</a>                        
+                 <li class="nav-item"> <a class="nav-link" href="/api/textpro/CaptainAmerica?apikey=SUA_APIKEY&text=sayo" target="_blank">Captain America</a>                         
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/Toxic?apikey=SUA_APIKEY&text=sayo" target="_blank">Toxic</a>                        
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/Chocolate?apikey=SUA_APIKEY&text=sayo" target="_blank">Chocolate</a>                        
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/Matrix?apikey=SUA_APIKEY&text=sayo" target="_blank">Matrix</a>                        
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/HorrorBlood?apikey=SUA_APIKEY&text=sayo" target="_blank">Horror Blood</a>                         
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/Thunder2?apikey=SUA_APIKEY&text=sayo" target="_blank">Thunder 2</a>                        
+                 <li class="nav-item"> <a class="nav-link" href="/api/textpro/3DBox?apikey=SUA_APIKEY&text=sayo" target="_blank">3D Box</a>                         
+               <li class="nav-item"> <a class="nav-link" href="/api/textpro/GreenNeon?apikey=SUA_APIKEY&text=sayo" target="_blank">Green Neon</a>          
+              <li class="nav-item"> <a class="nav-link" href="/api/textpro/natural-leaves?apikey=SUA_APIKEY&text=sayo" target="_blank">Natural-leaves Text</a>                 
+		            <li class="nav-item"> <a class="nav-link" href="/api/textpro/black-pink?apikey=SUA_APIKEY&text=sayo" target="_blank">Blackpink Text</a>
+		            <li class="nav-item"> <a class="nav-link" href="/api/textpro/drop-water?apikey=SUA_APIKEY&text=sayo" target="_blank">Dropwater Text</a>
+		            <li class="nav-item"> <a class="nav-link" href="/api/textpro/christmas?apikey=SUA_APIKEY&text=sayo" target="_blank">Christmas Text Image</a>
+		           <li class="nav-item"> <a class="nav-link" href="/api/textpro/3d-gradient?apikey=SUA_APIKEY&text=sayo" target="_blank">3D Gradient Text Image</a>
+		            <li class="nav-item"> <a class="nav-link" href="/api/textpro/porn-hub?apikey=SUA_APIKEY&text=sayo&text2=Akame" target="_blank">Pornhub Text</a>
+		           <li class="nav-item"> <a class="nav-link" href="/api/textpro/video-game?apikey=SUA_APIKEY&text=sayo&text2=Akame" target="_blank">Video game classic</a>		           
+		           <li class="nav-item"> <a class="nav-link" href="/api/textpro/glitch?apikey=SUA_APIKEY&text=sayo&text2=Akame" target="_blank">Glitch effect</a>		           
+		           <li class="nav-item"> <a class="nav-link" href="/api/textpro/glitchtk?apikey=SUA_APIKEY&text=sayo&text2=Akame" target="_blank">Glitch Tik Tok</a>		           
+		           <li class="nav-item"> <a class="nav-link" href="/api/textpro/america?apikey=SUA_APIKEY&text=sayo&text2=Akame" target="_blank">Capitão América</a>		           
+		           <li class="nav-item"> <a class="nav-link" href="/api/textpro/silver?apikey=SUA_APIKEY&text=sayo&text2=Akame" target="_blank">Metal Silver</a>		       
+		          <li class="nav-item"> <a class="nav-link" href="/api/textpro/silvergalax?apikey=SUA_APIKEY&text=sayo&text2=Akame" target="_blank">Metal Galaxy</a>		          
+		          <li class="nav-item"> <a class="nav-link" href="/api/textpro/3dsteal?apikey=SUA_APIKEY&text=sayo&text2=Akame" target="_blank">3D Steel</a>		          
+		          <li class="nav-item"> <a class="nav-link" href="/api/textpro/stone?apikey=SUA_APIKEY&text=sayo&text2=Akame" target="_blank">Stone</a>		          
+		          <li class="nav-item"> <a class="nav-link" href="/api/textpro/wallgraffiti?apikey=SUA_APIKEY&text=sayo&text2=Akame" target="_blank">wall graffiti</a>		          
+		          <li class="nav-item"> <a class="nav-link" href="/api/textpro/lightbulb?apikey=SUA_APIKEY&text=sayo&text2=Akame" target="_blank">light bulb</a>		          
+		          <li class="nav-item"> <a class="nav-link" href="/api/textpro/space3D?apikey=SUA_APIKEY&text=sayo&text2=Akame" target="_blank">space 3D</a>		          
+		           <li class="nav-item"> <a class="nav-link" href="/api/textpro/Marvelstudios?apikey=SUA_APIKEY&text=sayo&text2=Akame" target="_blank">Marvel studios</a>		          
+		          <li class="nav-item"> <a class="nav-link" href="/api/textpro/Marvelstudios2?apikey=SUA_APIKEY&text=sayo&text2=Akame" target="_blank">Marvel studios2</a>		          
+		          <li class="nav-item"> <a class="nav-link" href="/api/textpro/LionLogo?apikey=SUA_APIKEY&text=sayo&text2=Akame" target="_blank">Lion Logo</a>		          
+		          <li class="nav-item"> <a class="nav-link" href="/api/textpro/WolfLogo?apikey=SUA_APIKEY&text=sayo&text2=Akame" target="_blank">Wolf Logo</a>		          
+		          <li class="nav-item"> <a class="nav-link" href="/api/textpro/WolfLogoGalaxy?apikey=SUA_APIKEY&text=sayo&text2=Akame" target="_blank">Wolf Logo Galaxy</a>		          
+		           <li class="nav-item"> <a class="nav-link" href="/api/textpro/NinjaLogo?apikey=SUA_APIKEY&text=sayo&text2=Akame" target="_blank">Ninja Logo</a>
+          </ul>
+          </div>
+          </li>
+                           <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#ui-canvas" aria-expanded="false" aria-controls="ui-canvas">
+          <span class="menu-icon">
+          <i class="mdi mdi-folder-multiple-image"></i>
+          </span>
+          <span class="menu-title">Canvas</span>
+          <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-canvas">
+          <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="/api/canvas/bemvindo?nome=AKAME&nomegp=CABARÉ&membros=50&perfil=https://i.ibb.co/30yMJfC/774e257c2a7f.jpg&fundo=https://i.ibb.co/hY3VSzX/56b8ccfacea1.jpg&apikey=SUA_APIKEY" target="_blank">Bem vindo</a>
+           <li class="nav-item"> <a class="nav-link" href="/api/canvas/adeus?nome=AKAME&membros=50&perfil=https://i.ibb.co/30yMJfC/774e257c2a7f.jpg&fundo=https://i.ibb.co/hY3VSzX/56b8ccfacea1.jpg&apikey=SUA_APIKEY" target="_blank">Adeus</a>
+           <li class="nav-item"> <a class="nav-link" href="/api/canvas/bemvindo2?nome=AKAME&nomegp=CABARÉ&membros=50&perfil=https://i.ibb.co/30yMJfC/774e257c2a7f.jpg&fotogp=https://i.ibb.co/cNZNDBw/89d1c311c6ba.jpg&fundo=https://i.ibb.co/hY3VSzX/56b8ccfacea1.jpg&apikey=SUA_APIKEY" target="_blank">Bem Vindo 2</a>
+           <li class="nav-item"> <a class="nav-link" href="/api/canvas/adeus2?nome=AKAME&nomegp=CABARÉ&membros=50&perfil=https://i.ibb.co/30yMJfC/774e257c2a7f.jpg&fotogp=https://i.ibb.co/cNZNDBw/89d1c311c6ba.jpg&fundo=https://i.ibb.co/hY3VSzX/56b8ccfacea1.jpg&apikey=SUA_APIKEY" target="_blank">Adeus 2</a>
+           <li class="nav-item"> <a class="nav-link" href="/api/canvas/bemvindo3?nome=AKAME&nomegp=CABARÉ&perfil=https://i.ibb.co/30yMJfC/774e257c2a7f.jpg&fundo=https://i.ibb.co/hY3VSzX/56b8ccfacea1.jpg&apikey=SUA_APIKEY" target="_blank">Bem Vindo 3</a>
+           <li class="nav-item"> <a class="nav-link" href="/api/canvas/adeus3?nome=AKAME&nomegp=CABARÉ&perfil=https://i.ibb.co/30yMJfC/774e257c2a7f.jpg&fundo=https://i.ibb.co/hY3VSzX/56b8ccfacea1.jpg&apikey=SUA_APIKEY" target="_blank">Adeus 3</a>
+           <li class="nav-item"> <a class="nav-link" href="/api/canvas/rank?nome=Breno&perfil=https://i.ibb.co/30yMJfC/774e257c2a7f.jpg&fundo=https://i.ibb.co/hY3VSzX/56b8ccfacea1.jpg&xp=5000&fullxp=2500&rank=20&level=50&contagem=999&apikey=SUA_APIKEY" target="_blank">Rank</a>
+           <li class="nav-item"> <a class="nav-link" href="/api/canvas/levelup?&perfil=https://i.ibb.co/30yMJfC/774e257c2a7f.jpg&apikey=SUA_APIKEY" target="_blank">Level Up</a>
+           <li class="nav-item"> <a class="nav-link" href="/api/canvas/gay?img=https://i.ibb.co/30yMJfC/774e257c2a7f.jpg&apikey=SUA_APIKEY" target="_blank">Gay</a>
+           <li class="nav-item"> <a class="nav-link" href="/api/canvas/delete?img=https://i.ibb.co/30yMJfC/774e257c2a7f.jpg&apikey=SUA_APIKEY" target="_blank">Delete</a>
+           <li class="nav-item"> <a class="nav-link" href="/api/canvas/beautiful?img=https://i.ibb.co/30yMJfC/774e257c2a7f.jpg&apikey=SUA_APIKEY" target="_blank">Beautiful</a>
+           <li class="nav-item"> <a class="nav-link" href="/api/canvas/bobross?img=https://i.ibb.co/30yMJfC/774e257c2a7f.jpg&apikey=SUA_APIKEY" target="_blank">Bobross</a>
+           <li class="nav-item"> <a class="nav-link" href="/api/canvas/hitler?img=https://i.ibb.co/30yMJfC/774e257c2a7f.jpg&apikey=SUA_APIKEY" target="_blank">Hitler</a>
+           <li class="nav-item"> <a class="nav-link" href="/api/canvas/notstonk?img=https://i.ibb.co/30yMJfC/774e257c2a7f.jpg&apikey=SUA_APIKEY" target="_blank">Notstonk</a>
+           <li class="nav-item"> <a class="nav-link" href="/api/canvas/poutine?img=https://i.ibb.co/30yMJfC/774e257c2a7f.jpg&apikey=SUA_APIKEY" target="_blank">Poutine</a>                
+           <li class="nav-item"> <a class="nav-link" href="/api/canvas/rip?img=https://i.ibb.co/30yMJfC/774e257c2a7f.jpg&apikey=SUA_APIKEY" target="_blank">Rip</a>
+           <li class="nav-item"> <a class="nav-link" href="/api/canvas/trash?img=https://i.ibb.co/30yMJfC/774e257c2a7f.jpg&apikey=SUA_APIKEY" target="_blank">Trash</a>
+           <li class="nav-item"> <a class="nav-link" href="/api/canvas/lisa?img=https://i.ibb.co/30yMJfC/774e257c2a7f.jpg&apikey=SUA_APIKEY" target="_blank">Lisa</a>
+           <li class="nav-item"> <a class="nav-link" href="/api/canvas/komunis?img=https://i.ibb.co/30yMJfC/774e257c2a7f.jpg&apikey=SUA_APIKEY" target="_blank">Komunis</a>
+           <li class="nav-item"> <a class="nav-link" href="/api/canvas/wasted?img=https://i.ibb.co/30yMJfC/774e257c2a7f.jpg&apikey=SUA_APIKEY" target="_blank">Wasted</a>
+               <li class="nav-item"> <a class="nav-link" href="/api/canvas/circulo?img=https://i.ibb.co/30yMJfC/774e257c2a7f.jpg&apikey=SUA_APIKEY" target="_blank">Circulo</a>
+           <li class="nav-item"> <a class="nav-link" href="/api/canvas/bolsonaro?img=https://i.ibb.co/30yMJfC/774e257c2a7f.jpg&apikey=SUA_APIKEY" target="_blank">Bolsonaro</a>           
+          </ul>
+          </div>
+          </li>
+          <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#ui-photooxy" aria-expanded="false" aria-controls="ui-photooxy">
+          <span class="menu-icon">
+          <i class="mdi mdi-folder-image"></i>
+          </span>
+          <span class="menu-title">Photooxy API</span>
+          <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-photooxy">
+          <ul class="nav flex-column sub-menu">
+         
+         <li class="nav-item"> <a class="nav-link" href="api/textmaker?text=akame&text2=api&theme=glitch&apikey=YOUR_APIKEY">Glitch</a>
+         <li class="nav-item"> <a class="nav-link" href="api/textmaker/game?text=akame&text2=api&theme=pubg&apikey=YOUR_APIKEY">PUBG</a>
+         <li class="nav-item"> <a class="nav-link" href="api/textmaker/game?text=akame&text2=api&theme=battlefield&apikey=YOUR_APIKEY">BattleField</a>
+         <li class="nav-item"> <a class="nav-link" href="api/textmaker/senja?text=Akame&theme=coffee-cup&apikey=YOUR_APIKEY">Coffee Cup</a>
+         <li class="nav-item"> <a class="nav-link" href="api/textmaker/senja?text=Akame&theme=coffee-cup2&apikey=YOUR_APIKEY">Coffee Cup 2</a>
+         <li class="nav-item"> <a class="nav-link" href="api/textmaker/metallic?text=Akame&theme=glow&apikey=YOUR_APIKEY">Glow</a>
+         <li class="nav-item"> <a class="nav-link" href="api/textmaker/alam?text=akame&theme=flower&apikey=YOUR_APIKEY">Flower</a>
+         <li class="nav-item"> <a class="nav-link" href="api/textmaker/random?text=Akame&theme=text-burn&apikey=YOUR_APIKEY">Text Burn</a>
+         <li class="nav-item"> <a class="nav-link" href="api/textmaker/random?text=akame&theme=art-quote&apikey=YOUR_APIKEY">Art Quote</a>
+         <li class="nav-item"> <a class="nav-link" href="api/textmaker/roses?text=akame&theme=wooden-boarch&apikey=YOUR_APIKEY">Wooden Boarch</a>
+          </ul>
+          </div>
+          </li>
+          <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#ui-textpro" aria-expanded="false" aria-controls="ui-textpro">
+          <span class="menu-icon">
+          <i class="mdi mdi-lock"></i>
+          </span>
+          <span class="menu-title">Encrypt API</span>
+          <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-textpro">
+          <ul class="nav flex-column sub-menu">
+          
+          <li class="nav-item"> <a class="nav-link" href="api/binary?apikey=YOUR_APIKEY&encode=akame">Binary Encode</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/binary?apikey=YOUR_APIKEY&decode=akame">Binary Decode</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/base?apikey=YOUR_APIKEY&type=base64&encode=akame">Base64 Encode</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/base?apikey=YOUR_APIKEY&type=base64&decode=akame=">Base64 Decode</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/base?apikey=YOUR_APIKEY&type=base32&encode=akame">Base32 Encode</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/base?apikey=YOUR_APIKEY&type=base32&decode=akame=">Base32 Decode</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/md5?apikey=YOUR_APIKEY&text=akame">MD5</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/createcode?text=akame&apikey=YOUR_APIKEY">Gerador de código</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/dork?apikey=YOUR_APIKEY&dork=php.id">busca idiota</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/pastebin?apikey=YOUR_APIKEY&text=AKAME API A MELHOR">pastebin</a></li>
+          </ul>
+          </div>
+          </li>
+          <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#ui-fun" aria-expanded="false" aria-controls="ui-fun">
+          <span class="menu-icon">
+          <i class="mdi mdi-emoticon-happy"></i>
+          </span>
+          <span class="menu-title">Fun API</span>
+          <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-fun">
+          <ul class="nav flex-column sub-menu">
+          	        <li class="nav-item"> <a class="nav-link" href="/api/dadu?apikey=APIKEY">Dado</a></li>
+          	        <li class="nav-item"> <a class="nav-link" href="/api/math2?apikey=APIKEY">Matemática</a></li>
+          </ul>
+          </div>
+          </li>
+          <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#ui-anime" aria-expanded="false" aria-controls="ui-anime">
+          <span class="menu-icon">
+          <i class="mdi mdi-cat"></i>
+          </span>
+          <span class="menu-title">Jogos</span>
+          <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-anime">
+          <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="/game">GAMES</a></li>
+          </ul>
+          </div>
+          </li>
+          <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#ui-tools" aria-expanded="false" aria-controls="ui-tools">
+          <span class="menu-icon">
+          <i class="mdi mdi-wrench"></i>
+          </span>
+          <span class="menu-title">Tools API</span>
+          <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-tools">
+          <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="api/ssweb?apikey=YOUR_APIKEY&url=https://youtu.be/xm7TWFiZgTw">Printar a web</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="api/ssweb?apikey=YOUR_APIKEY&url=https://www.youtube.com/c/ramaganz">Printar a web 2</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/repeat?text=akame api&jumlah=1000&apikey=YOUR_APIKEY">Repetidor de Texto</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/short/tiny?url=akame-r.herokuapp.com/&apikey=YOUR_APIKEY">Encurtar link</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/calculator?número=11%20*%2045&apikey=YOUR_APIKEY">Calculadora</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/tomp4?url=bynens.be/demo/animated-webp-supported.webp&apikey=YOUR_APIKEY">Webp Para MP4</a></li>
+          </ul>
+          </div>
+          </li>
+          <li class="nav-item nav-category">
+          <span class="nav-link">Meu contato</span>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="https://github.com/">
+              <span class="menu-icon">
+                <i class="mdi mdi-github-circle"></i>
+              </span>
+              <span class="menu-title">Github</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="https://wa.me/556181496039">
+              <span class="menu-icon">
+                <i class="mdi mdi-whatsapp"></i>
+              </span>
+              <span class="menu-title">WhatsApp</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="https://wa.me/556181496039">
+              <span class="menu-icon">
+                <i class="mdi mdi-paypal"></i>
+              </span>
+              <span class="menu-title">Doar?</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="https://instagram.com/sayo_dev">
+              <span class="menu-icon">
+                <i class="mdi mdi-instagram"></i>
+              </span>
+              <span class="menu-title">Instagram</span>
+            </a>
+          </li>
+        </ul>
+       </font>
+      </nav>
+      <div class="container-fluid page-body-wrapper">
+        <nav class="navbar p-0 fixed-top d-flex flex-row">
+          <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
+            <a class="navbar-brand brand-logo-mini" href="index.html"><big><i class="mdi mdi-biohazard text-primary"></i></big></a>
+          </div>
+          <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+            <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+              <span class="mdi mdi-menu"></span>
+            </button>
+            <ul class="navbar-nav w-100">
+              <li class="nav-item w-100">
+                <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex ">
+                  <input type="text" class="form-control" placeholder="Fxc7 APIs">
+                </form>
+              </li>
+            </ul>
+            <ul class="navbar-nav navbar-nav-right">
+              <li class="nav-item nav-settings d-none d-lg-block">
+                <a class="nav-link" href="#">
+                  <i class="mdi mdi-view-grid"></i>
+                </a>
+              </li>
+              <li class="nav-item dropdown border-left">
+                <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                  <i class="mdi mdi-bell"></i>
+                  <span class="count bg-danger"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                  <h6 class="p-3 mb-0">Atualização</h6>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-dark rounded-circle">
+                        <i class="mdi mdi-calendar text-success"></i>
+                      </div>
+                    </div>
+                    <div class="preview-item-content">
+                      <p class="preview-subject mb-1">Design</p>
+                      <p class="text-muted ellipsis mb-0"> Estilo do site melhorado </p>
+                    </div>
+                      <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-dark rounded-circle">
+                        <i class="mdi mdi-calendar text-success"></i>
+                      </div>
+                    </div>
+                    <div class="preview-item-content">
+                      <p class="preview-subject mb-1">Apikey</p>
+                      <p class="text-muted ellipsis mb-0"> Fale comigo para obter a sua </p>
+                    </div>
+                    <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-dark rounded-circle">
+                        <i class="mdi mdi-calendar text-success"></i>
+                      </div>
+                    </div>
+                    <div class="preview-item-content">
+                      <p class="preview-subject mb-1">Apis</p>
+                      <p class="text-muted ellipsis mb-0"> Novas apis adicionadas!!! </p>
+                    </div>
+                  </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
+                  <div class="navbar-profile">
+                    <img class="img-xs rounded-circle" src="https://i.ibb.co/30yMJfC/774e257c2a7f.jpg" alt="">
+                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Breno Dev</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+              <span class="mdi mdi-format-line-spacing"></span>
+            </button>
+          </div>
+        </nav>
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+              <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="font-weight-bold text-danger text-uppercase">Seu IP</h5>
+                    <div class="row">
+                      <div class="col-9">
+                        <div class="d-flex align-items-center align-self-start">
+                          <h3 class="mb-0" id="ip">Carregando...</h3>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="icon icon-box-success">
+                          <span class="mdi mdi-access-point-network icon-item"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <font face="Original Surfer" class="text-muted font-weight-normal">Seu IP Address</font>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h6 class="font-weight-bold text-info text-uppercase">Sua bateria</h6>
+                    <div class="row">
+                      <div class="col-9">
+                        <div class="d-flex align-items-center align-self-start">
+                        	<span id="batteryLevel"></span>
+                          <h3 class="mb-0" id="percentageLevel">Carregando...</h3>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="icon icon-box-success ">
+                          <span class="mdi mdi-battery-positive"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <font face="Original Surfer" class="text-muted font-weight-normal">Porcentagem Da Sua Bateria</font>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="font-weight-bold text-success text-uppercase">Visitantes</h5>
+                    <div class="row">
+                      <div class="col-9">
+                        <div class="d-flex align-items-center align-self-start">
+                          <h3 class="mb-0" id="visits">Carregando...</h3>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="icon icon-box-success ">
+                          <span class="mdi mdi-eye icon-item"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <font face="Original Surfer" class="text-muted font-weight-normal">Pessoas que já abriu meu site</font>
+                  </div>
+                </div>
+              </div>
+            <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="font-weight-bold text-info text-uppercase">Data</h5>
+                    <div class="row">
+                      <div class="col-9">
+                        <div class="d-flex align-items-center align-self-start">
+                          <h4 class="mb-0" id="tanggal">Carregando...</h4>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="icon icon-box-success ">
+                          <span class="mdi mdi-calendar icon-item"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <font face="Original Surfer" class="text-muted font-weight-normal">Data De Hoje</font>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="font-weight-bold text-success text-uppercase">Horário</h5>
+                    <div class="row">
+                      <div class="col-9">
+                        <div class="d-flex align-items-center align-self-start">
+                          <h4 class="mb-0" id="Clock">Carregando...</h4>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="icon icon-box-success ">
+                          <span class="mdi mdi-clock icon-item"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <font face="Original Surfer" class="text-muted font-weight-normal" id="Ucapan">Oie</font>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h6 class="font-weight-bold text-info text-uppercase">Akame</h6>
+                    <div class="row">
+                      <div class="col-9">
+                        <div class="d-flex align-items-center align-self-start">
+                          <h5 class="mb-0" id="IdulAdha">Carregando...</h5>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="icon icon-box-success ">
+                          <span class="mdi mdi-star icon-item"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <font face="Original Surfer" class="text-muted font-weight-normal">Api</font>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <form action="/api/cekapikey">
+              <div class="card card-round mt-5 stretch-card grid-margin">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h4 class="m-0 font-weight-bold text-warning"><i <h4>VERIFICAR APIKEY</h4>
+                </div>
+               <div class="card-body">
+                 <p class="status" style="font-size: 17px;"></p>
+                   <div class="form-group">
+                     <input class="form-control font-weight-bold text-center" type="text" placeholder="Sua Apikey" name="apikey" required>
+                   </div>
+                   <div class="form-group"><center>
+                     <button type="submit" class="btn btn-primary content-justify-center"><i class="mdi mdi-arrow-right-bold-hexagon-outline"></i> <span class="font-weight-bold"> Verificar</span></button></center>
+                   </div>
+               </div>
+             </div>
+            </form>
+<ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-gw-3+1f-3d+2z" data-ad-client="ca-pub-5404310597803049" data-ad-slot="6657550061"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+            <div class="row">
+              <div class="col-md-6 col-xl-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="mt-3 btn btn-outline-danger bg-transparent">
+                    <div id="demo" class="alert btn btn-outline-danger" role="alert">
+                      <span id="Statistic">Carregando...</span>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 grid-margin stretch-card">
+              <div class="card">
+              <div class="card-body">
+              <img src="https://i.ibb.co/30yMJfC/774e257c2a7f.jpg" alt="Breno Dev" class="logo img-fluid rounded mx-auto d-block mb-4"/>
+              <h6 class="m-0 font-weight-bold text-primary">Informação</h6>
+              <h6><br>
+              Todas as apis desse site são gratuitas use com moderação <br><br>Apikey: <font color="red">akame</font>
+              <br> Quer uma apikey personalizada? Fale comigo <a href="https://wa.me/556181496039"> Breno</a></font>
+              </div>
+              <div class="col-md-12 grid-margin stretch-card">
+              <div class="card">
+              <h4 class="card-title">OUTRAS CARACTERÍSTICAS</h4>
+              <div class="template-demo">
+              <button type="button" id="sbs" class="btn btn-dark btn-lg btn-block" onclick="githubstalk()">GITHUB STALK</button>
+              <button type="button" id="sbs" class="btn btn-dark btn-lg btn-block" onclick="hilihgen()">SELECIONE O GERADOR</button>
+              </div>
+              </div>
+              </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <div class="bg-dark btn btn-block btn-outline-danger">
+                <font face="Original Surfer" class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright 漏 <span id="Years">00</span> Breno</font>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+       <audio autoplay="true" src="https://r2---sn-p5qlsndd.googlevideo.com/videoplayback?expire=1632348456&ei=yFRLYbKZA5f5hgaBsKeIBg&ip=3.86.101.124&id=o-AFvTvV-Oekj8X9G8NatNPNHHkB3XOOgjORplL_feQtvP&itag=250&source=youtube&requiressl=yes&mh=4h&mm=31%2C29&mn=sn-p5qlsndd%2Csn-p5qs7nsr&ms=au%2Crdu&mv=m&mvi=2&pl=15&initcwndbps=1058750&vprv=1&mime=audio%2Fwebm&ns=HkpvFTc-ExBS_QSWSH1a4gIG&gir=yes&clen=2496673&dur=251.541&lmt=1624141813137383&mt=1632326461&fvip=2&keepalive=yes&fexp=24001373%2C24007246&c=WEB&txp=5532434&n=wIgBxjmEbaicFoI-&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRAIgZJhtycpVw9DczjXIUYfhLXp-w9cNRTnUI4bF1ZehEucCIAOHT4D_0SttJ_I2iM8_HL6faUKM0kSrcAdiu03OC_e8&ratebypass=yes&sig=AOq0QJ8wRQIhAJANcANCMCvZvgE5oM5RrnqDxWm5i8OY9jH1oTVx100SAiAi8L--b_vRzyUF1eXBI0JQZ96gdhL-alOzaibzArK0FA%3D%3D"></audio>
+    <script>
+      swal({
+        title: 'Bem vindo ao meu rest-api akame...',
+        text: 'By Breno',
+        imageUrl: 'https://i.ibb.co/30yMJfC/774e257c2a7f.jpg',
+        imageWidth: 200,
+        imageHeight: 200,
+        imageAlt: 'Ojan',
+        animation: true
+      })
+    </script>
+			<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>   
+    <script src="vendors/js/vendor.bundle.base.js"></script>
+    <script src="vendors/owl-carousel-2/owl.carousel.min.js"></script>
+    <script src="js/off-canvas.js"></script>
+    <script src="js/hoverable-collapse.js"></script>
+    <script src="js/misc.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/todolist.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/ojan.js"></script>
+  </html>
